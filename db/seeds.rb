@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-Author.destroy_all
+# Author.destroy_all
 
 # Book.destroy_all
 # Deletes all books entered through SQL in IRB
@@ -18,6 +18,7 @@ bul = Author.create(first_name: "Will", last_name: "Bulsiewicz")
 tol = Author.create(first_name: "Eckhart", last_name: "Tolle")
 lee = Author.create(first_name: "Harper", last_name: "Lee")
 wol = Author.create(first_name: "Tobias", last_name: "Wolff")
+gre = Author.create(first_name: "Kate", last_name: "Grenville")
 
 
 ara.books.create(title: "Drop Bear", publisher: "University of Queensland Press", date_published: "2021-03-03")
