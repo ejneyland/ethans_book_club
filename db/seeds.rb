@@ -19,6 +19,7 @@ tol = Author.create(first_name: "Eckhart", last_name: "Tolle")
 lee = Author.create(first_name: "Harper", last_name: "Lee")
 wol = Author.create(first_name: "Tobias", last_name: "Wolff")
 gre = Author.create(first_name: "Kate", last_name: "Grenville")
+har = Author.create(first_name: "Roger", last_name: "Hargreaves")
 
 
 ara.books.create(title: "Drop Bear", publisher: "University of Queensland Press", date_published: "2021-03-03")
