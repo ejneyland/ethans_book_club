@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   get 'books', to: 'books#index'
   get 'books/new', to: 'books#new'
-  # get 'books/show'
   get 'books/:id', to: 'books#show', as: 'book'
-  put 'books/:id', to: 'books#update'
+  get 'books/:id/edit', to: 'books#edit', as: 'edit_book'
+  patch 'books/:id', to: 'books#update'
   post 'books', to: 'books#create'
   delete 'books/:id', to: 'books#destroy'
   

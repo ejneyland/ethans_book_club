@@ -1,7 +1,8 @@
 class BooksController < ApplicationController
-  skip_before_action :verify_authenticity_token
-  before_action :find_book, only: [:show, :update, :destroy]
-  # except: [:index, :create, :new] only is probably a better option
+  # skip_before_action :verify_authenticity_token
+  before_action :find_book, only: [:show, :update, :destroy, :edit]
+  # except: [:index, :create, :new] (only is probably a better option)
+  before_action :find_author, only: [:new, :edit]
 
   def index
     # render json: Book.all
@@ -18,13 +19,16 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new #(book_params)
-    @authors = Author.order(:last_name)
+    # @authors = Author.order(:last_name)
   end
-  
 
   def create
     book = Book.create!(book_params)
     redirect_to book
+  end
+
+  def edit
+    # @authors = Author.order(:last_name)
   end
 
   def update
@@ -43,6 +47,10 @@ class BooksController < ApplicationController
 
   def find_book
     @book = Book.find(params[:id])
+  end
+
+  def find_author
+    @authors = Author.order(:last_name)
   end
 
   def book_params
