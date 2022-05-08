@@ -1,6 +1,6 @@
 <h1>Books</h1>
 
-<%= link_to 'New Book', books_new_path, class: "btn btn-primary" %>
+<%= user_signed_in? ? link_to('New Book', books_new_path, class: "btn btn-primary") : '' %>
 
 <% @books.each do |book| %>
     <%# book_path(book.id) was where 'book' is below %>

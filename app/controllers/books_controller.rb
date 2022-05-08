@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   # skip_before_action :verify_authenticity_token
   before_action :find_book, only: [:show, :update, :destroy, :edit]
   # except: [:index, :create, :new] (only is probably a better option)
