@@ -6,12 +6,19 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+User.destroy_all
 Author.destroy_all
 
 # Book.destroy_all
 # Deletes all books entered through SQL in IRB
 # Now only contains the books that were hardcoded
 # Used for development, not for a live site
+
+admin = User.create(email: 'ejn@gm.com', password: 'password')
+admin.add_role :admin
+
+editor = User.create(email: 'editor@gm.com', password: 'password')
+editor.add_role :editor
 
 ara = Author.create(first_name: "Evelyn", last_name: "Araluen")
 bul = Author.create(first_name: "Will", last_name: "Bulsiewicz")
@@ -27,3 +34,8 @@ bul.books.create(title: "Fiber Fueled", publisher: "Penguin", date_published: "2
 tol.books.create(title: "The Power of Now", publisher: "Namaste Publishing", date_published: "2004-04-04")
 lee.books.create(title: "To Kill a Mockingbird", publisher: "Arrow Books", date_published: "2006-06-06")
 wol.books.create(title: "This Boy's Life", publisher: "Bloomsbury Publishing", date_published: "1999-09-09")
+
+puts "Users: #{User.count}"
+puts "Roles: #{Role.count}"
+puts "Authors: #{Author.count}"
+puts "Books: #{Book.count}"

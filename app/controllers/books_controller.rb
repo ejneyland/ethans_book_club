@@ -46,6 +46,10 @@ class BooksController < ApplicationController
 
   private 
 
+  def check_auth
+    authorize Book
+  end
+
   def find_book
     @book = Book.find(params[:id])
   end
